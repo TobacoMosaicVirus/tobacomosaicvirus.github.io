@@ -269,7 +269,7 @@
               
                 
                 <a class="post-title-link" href="/2016/09/20/hello-world/" itemprop="url">
-                  Hello World
+                  通过Hexo和Github搭建个人博客
                 </a>
               
             
@@ -296,8 +296,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/hexo教程/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo教程</span>
+                  <a href="/categories/教程/" itemprop="url" rel="index">
+                    <span itemprop="name">教程</span>
                   </a>
                 </span>
 
@@ -338,10 +338,43 @@
       
         
           
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+            <hr>
+<p>中秋节的第二天，陆续格掉了三块硬盘。整个过程我的心里始终激荡着类似于一种“妙不可言”的感情。大脑也一度和硬盘一样。当然，结局自然是通过网盘和磁盘恢复软件挽回了一定的损失。可是，我仍旧要重新整理最近几年的所有资料。这个博客也是在这样的环境下重新搭建的。上次博客的这篇文章写了一半便搁置了，今天想了想。虽然个人博客这个东西有种烂大街的趋势，可我仍旧是在这个时候走在了这条街上。此刻，我只是留下一把钥匙。<br>那么，开始吧。</p>
+<hr>
+<h1 id="搭建环境"><a href="#搭建环境" class="headerlink" title="搭建环境"></a>搭建环境</h1><p></p>
+<blockquote>
+<p>回想上次写这个文章时的打算————人到中年，似乎有点罗嗦了。</p>
+</blockquote>
+<p>首先，无论是什么操作系统，均需要<strong>Node.js</strong>、<strong>Git</strong>和<strong>Hexo</strong>。下载地址如下：</p>
+<ul>
+<li><p>Node.js4.5.0：【<a href="https://nodejs.org/en/download/" target="_blank" rel="external">官网下载</a>】或【<a href="http://pan.baidu.com/s/1kVqDe6r" target="_blank" rel="external">百度云下载</a>】<br>此处百度云内只有Windows版本。如有其他需求请在官网上下载。</p>
+</li>
+<li><p>GitHubDesktop：【<a href="https://desktop.github.com/" target="_blank" rel="external">官网下载</a>】或【<a href="http://pan.baidu.com/s/1kV99Yvl" target="_blank" rel="external">百度云下载</a>】<br>此处百度云和官网均为在线安装程序，网路环境不好可能按照不成功。<br>经测试，下载Windows下的Github客户端，登录后无需再手动配置SSH。</p>
+</li>
+<li><p>Windows系统的Hexo在Git安装成功后通过Git Shell安装。<br>登录成功后可直接打开Git Shell。通过以下命令安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>如果你会科学上网，那么你一定可以轻松加愉快的完成上述步骤。<br>至此，使用Hexo创建个人博客的基础环境已经安装完成。接下来我们仅仅通过几个简单的命令就可以让你的个人Blog运行在你的个人电脑上了^。</p>
+<h1 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h1><p><br>首先，你需要确定一个文件夹，用于存放你个人博客的工程目录。我们假定这个文件夹的路径是<code>c://myBlog</code>。创建好这个文件夹后，请打开Git Shell，接下来我们的操作主要集中在这里了。</p>
+<ol>
+<li>将Shell里的目录切换到你的博客目录。</li>
+<li>输入<code>hexo init</code>后等待初始化完成。</li>
+<li>输入<code>npm install</code>等待安装必要的文件。</li>
+</ol>
+<p>不出意外，你的myBlog文件夹内的目录结构是否如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">.</div><div class="line">├── _config.yml</div><div class="line">├── package.json</div><div class="line">├── scaffolds</div><div class="line">├── source</div><div class="line">|   ├── _drafts</div><div class="line">|   └── _posts</div><div class="line">└── themes</div></pre></td></tr></table></figure></p>
+<p>至此，你的个人博客工程文件已经初始化完成。<br>在Shell中的路径保持在myBlog下，输入<code>hexo server</code>即可启动你的Blog了。如果因为端口被占用启动失败，那么只需要加上一个端口的参数就好了。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server -p 8888</div></pre></td></tr></table></figure></p>
+<p>输入上述命令后，不出意外，你会在Shell中看到以下信息：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">INFO Start processing</div><div class="line">INFO Hexo is running at http://localhost:8808/.Press Ctrl+can to stop</div></pre></td></tr></table></figure></p>
+<p>此时，请通过浏览器打开【<strong><a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></strong>】来观察你的Blog是否正确运行了！<br><blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque hendrerit lacus ut purus iaculis feugiat. Sed nec tempor elit, quis aliquam neque. Curabitur sed diam eget dolor fermentum semper at eu lorem.</p>
+</blockquote></p>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">[rectangle setX: <span class="number">10</span> y: <span class="number">10</span> width: <span class="number">20</span> height: <span class="number">20</span>];</div><div class="line"><span class="built_in">NSLog</span>(<span class="string">@"%d"</span>,<span class="number">123</span>);</div></pre></td></tr></table></figure>
+<div class="video-container"><iframe src="//www.youtube.com/embed/lYEeb4U6ZYs" frameborder="0" allowfullscreen></iframe></div>
+<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">System.out.println(<span class="string">"123"</span>);</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div><div class="line">System.out.println(<span class="string">"123"</span>);</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
 <h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
