@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="浮游觀察者">
-<meta property="og:type" content="website">
-<meta property="og:title" content="蜉蝣觀察錄">
-<meta property="og:url" content="http://mosaicvirus.cn/index.html">
+<meta name="description" content="前文说过，最近失手格调了三块磁盘。其中最珍贵的是09年至今的照片。通过文件恢复和之前的云备份总算挽回了十之八九。可是这些图片的数量较多（一万张左右）且重复率较高，再次手工整理会消耗大量时间。网络上的文件去重又少有整理的功能。在这样背景下，我通过Java做了这么一个和本人需求基本一致的程序。在此会记录下整个实现过程。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="通过Java对图片等文件进行分类和去重">
+<meta property="og:url" content="http://mosaicvirus.cn/2016/09/21/java/index.html">
 <meta property="og:site_name" content="蜉蝣觀察錄">
-<meta property="og:description" content="浮游觀察者">
+<meta property="og:description" content="前文说过，最近失手格调了三块磁盘。其中最珍贵的是09年至今的照片。通过文件恢复和之前的云备份总算挽回了十之八九。可是这些图片的数量较多（一万张左右）且重复率较高，再次手工整理会消耗大量时间。网络上的文件去重又少有整理的功能。在这样背景下，我通过Java做了这么一个和本人需求基本一致的程序。在此会记录下整个实现过程。">
+<meta property="og:updated_time" content="2016-09-21T15:42:57.499Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="蜉蝣觀察錄">
-<meta name="twitter:description" content="浮游觀察者">
+<meta name="twitter:title" content="通过Java对图片等文件进行分类和去重">
+<meta name="twitter:description" content="前文说过，最近失手格调了三块磁盘。其中最珍贵的是09年至今的照片。通过文件恢复和之前的云备份总算挽回了十之八九。可是这些图片的数量较多（一万张左右）且重复率较高，再次手工整理会消耗大量时间。网络上的文件去重又少有整理的功能。在这样背景下，我通过Java做了这么一个和本人需求基本一致的程序。在此会记录下整个实现过程。">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://mosaicvirus.cn/"/>
+  <link rel="canonical" href="http://mosaicvirus.cn/2016/09/21/java/"/>
 
-  <title> 蜉蝣觀察錄 </title>
+  <title> 通过Java对图片等文件进行分类和去重 | 蜉蝣觀察錄 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -146,9 +147,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -245,9 +244,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -267,10 +266,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/09/21/java/" itemprop="url">
-                  通过Java对图片等文件进行分类和去重
-                </a>
+                通过Java对图片等文件进行分类和去重
               
             
           </h1>
@@ -306,6 +302,11 @@
           
 
           
+              &nbsp; | &nbsp;
+              <span class="page-pv"><i class="fa fa-file-o">阅读量</i>
+              <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              </span>
+          
         </div>
       </header>
     
@@ -317,24 +318,25 @@
       
 
       
-        
-          <hr>
+        <hr>
 <p>前文说过，最近失手格调了三块磁盘。其中最珍贵的是09年至今的照片。通过文件恢复和之前的云备份总算挽回了十之八九。可是这些图片的数量较多（一万张左右）且重复率较高，再次手工整理会消耗大量时间。网络上的文件去重又少有整理的功能。在这样背景下，我通过Java做了这么一个和本人需求基本一致的程序。在此会记录下整个实现过程。</p>
 <hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/21/java/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<a id="more"></a>
+<h1 id="设计需求"><a href="#设计需求" class="headerlink" title="设计需求"></a>设计需求</h1><h1 id="分模块编程"><a href="#分模块编程" class="headerlink" title="分模块编程"></a>分模块编程</h1><h1 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h1>
+      
+    </div>
+
+    <div>
+      
         
+
       
     </div>
 
     <div>
       
-    </div>
+        
 
-    <div>
       
     </div>
 
@@ -342,143 +344,32 @@
       
 
       
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/09/20/hello-world/" rel="next" title="通过Hexo和Github搭建个人博客">
+                <i class="fa fa-chevron-left"></i> 通过Hexo和Github搭建个人博客
+              </a>
             
-              
-                
-                <a class="post-title-link" href="/2016/09/20/hello-world/" itemprop="url">
-                  通过Hexo和Github搭建个人博客
-                </a>
-              
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
             
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-20T14:01:46+08:00" content="2016-09-20">
-              2016-09-20
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/教程/" itemprop="url" rel="index">
-                    <span itemprop="name">教程</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/20/hello-world/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/20/hello-world/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <hr>
-<p>中秋节的第二天，陆续格掉了三块硬盘。整个过程我的心里始终激荡着类似于一种“妙不可言”的感情。大脑也一度和硬盘一样。当然，结局自然是通过网盘和磁盘恢复软件挽回了一定的损失。可是，我仍旧要重新整理最近几年的所有资料。这个博客也是在这样的环境下重新搭建的。上次博客的这篇文章写了一半便搁置了，今天想了想。虽然个人博客这个东西有种烂大街的趋势，可我仍旧是在这个时候走在了这条街上。此刻，我只是留下一把钥匙。<br>那么，开始吧。</p>
-<hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/20/hello-world/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -486,6 +377,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/09/21/java/"
+           data-title="通过Java对图片等文件进行分类和去重" data-url="http://mosaicvirus.cn/2016/09/21/java/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -505,8 +404,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/avatar.png"
@@ -556,6 +464,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计需求"><span class="nav-number">1.</span> <span class="nav-text">设计需求</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分模块编程"><span class="nav-number">2.</span> <span class="nav-text">分模块编程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#测试"><span class="nav-number">3.</span> <span class="nav-text">测试</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -668,6 +587,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
