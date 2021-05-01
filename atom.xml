@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>蜉蝣观察者</title>
+  
+  <subtitle>奇闻·轶事</subtitle>
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2021-04-30T14:46:21.789Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>Virus</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hello-world</title>
+    <link href="http://example.com/2021/04/30/hello-world/"/>
+    <id>http://example.com/2021/04/30/hello-world/</id>
+    <published>2021-04-30T14:46:21.000Z</published>
+    <updated>2021-04-30T14:46:21.789Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>M1配置开发环境</title>
+    <link href="http://example.com/2021/04/30/M1%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/"/>
+    <id>http://example.com/2021/04/30/M1%E9%85%8D%E7%BD%AE%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</id>
+    <published>2021-04-30T14:45:37.000Z</published>
+    <updated>2021-04-30T14:45:37.055Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+</feed>
